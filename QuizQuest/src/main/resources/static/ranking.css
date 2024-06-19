@@ -1,0 +1,214 @@
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #F2FCFC;
+    color: #000000;
+}
+
+header, footer {
+    background-color: #CCE8EB;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para o cabeçalho */
+header {
+    background-color: #CCE8EB;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+#toggle-contrast {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+}
+
+#toggle-contrast:hover {
+    background-color: #0056b3;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+#logout-button {
+    cursor: pointer;
+    color: #dc3545;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+form button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+}
+
+button:focus, input:focus {
+    outline: 2px solid #005f5f;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    display: none;
+}
+
+input.error {
+    border: 2px solid red;
+}
+
+#ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    display: none;
+}
+
+#ranking-table th, #ranking-table td {
+    border: 2px solid #3f30ce;
+    padding: 10px;
+    text-align: center;
+}
+
+.check-mark {
+    color: green;
+}
+
+.cross-mark {
+    color: red;
+}
+
+footer {
+    background-color: #CCE8EB;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+body.high-contrast {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.high-contrast header, body.high-contrast footer {
+    background-color: #333333;
+}
+
+body.high-contrast button {
+    background-color: #ffdd57;
+    color: #000000;
+}
+
+body.high-contrast input {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #ffdd57;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+    }
+
+    .header-content img {
+        margin-bottom: 10px;
+    }
+
+    form {
+        width: 100%;
+    }
+}
+
+/* Estilização do botão de voltar */
+.back-button {
+    display: inline-block;
+    margin: 10px 0 20px 10px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #CCE8EB;
+    transition: background-color 0.3s, color 0.3s;
+    width: 200px;
+}
+
+.back-button i {
+    margin-right: 8px;
+}
+
+.back-button:hover {
+    background-color: #007bff;
+    color: #fff;
+}

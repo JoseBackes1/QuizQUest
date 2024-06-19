@@ -1,0 +1,144 @@
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+header, footer {
+    background-color: #CCE8EB;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-content img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+}
+
+button#cancel-quiz {
+    background-color: #dc3545;
+}
+
+button:focus, input:focus, select:focus {
+    outline: 2px solid #005f5f;
+}
+
+body.high-contrast {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.high-contrast header, body.high-contrast footer {
+    background-color: #333333;
+}
+
+body.high-contrast button {
+    background-color: #ffdd57;
+    color: #000000;
+}
+
+body.high-contrast input, body.high-contrast select {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #ffdd57;
+}
+
+/* Estilos para a tela de confirmação */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+}
+
+button#confirm-yes {
+    background-color: #28a745;
+}
+
+button#confirm-no {
+    background-color: #ffc107;
+}
+
+/* Estilos para o modo de contraste */
+body.high-contrast .modal-content {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #ffdd57;
+}
+
+body.high-contrast button#confirm-yes {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+body.high-contrast button#confirm-no {
+    background-color: #ffc107;
+    color: #000000;
+}

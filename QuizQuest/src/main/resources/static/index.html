@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Educativo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-title">
+                <img id="logo" src="Quiz_educativo.png" alt="Logo do site Quiz Educativo constituida por uma nuvem com redes de internet simulando a chuva">
+                <h1>Quiz Educativo</h1>
+            </div>
+            <button id="toggle-contrast">Alto Contraste</button>
+            <button id="login-btn">Login</button>
+        </div>
+    </header>
+    <main>
+        <div class="left-side">
+            <p class="mensagem-criar-quiz">Crie Quizzes e <br> compartilhe com seus alunos</p>
+            <button id="create-quiz">Criar um Quiz</button>
+        </div>
+        <div class="right-side">
+            <p class="inserir-codigo-quiz">Possui um código para acessar?</p>
+            <div class="codigo-search">
+                <input type="text" id="quiz-code" placeholder="Digite o código">
+                <div id="search-code">
+                    <i class="fas fa-search" id="search-icon"></i>
+                    <span>Buscar</span>
+                </div>
+            </div>
+            <div id="error-message" style="color: red; font-size: 16px; margin-top: 5px; display: none;"></div>
+        </div>
+        
+        <div id="info-box" style="display: none;" class="info-box">
+            <span id="info-message"></span>
+            <button id="close-info-box">Fechar</button>
+        </div>
+
+        <!-- Linha divisória -->
+        <hr class="divider">
+
+    </main>
+    <footer>
+        <p>© 2024 QuizEducativo. Todos os direitos reservados.</p>
+    </footer>
+    <script src="scripts.js"></script>
+
+    <!--VLibras-->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
+</html>

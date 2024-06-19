@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking - Quiz Educativo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="ranking.css">
+</head>
+<body>
+<header id="site-header">
+    <div class="header-content">
+        <img id="site-logo" src="Quiz_Educativo.png" alt="Logo do site Quiz Educativo constituída por uma nuvem com redes de internet simulando a chuva">
+        <h1>Quiz Educativo</h1>
+        <button id="toggle-contrast">Alto Contraste</button>
+    </div>
+</header>
+<a href="dashboard.html" class="back-button"><i class="fas fa-arrow-left"></i> Voltar para o Dashboard</a>
+<main>
+    <h2>Ranking dos Alunos</h2>
+    <form id="ranking-form">
+        <label for="ranking-code">Código do Quiz:</label>
+        <input type="text" id="ranking-code" name="ranking-code" required>
+        <button type="submit">Consultar</button>
+        <p id="error-message" class="error-message"></p>
+    </form>
+    <table id="ranking-table" style="display: none;">
+        <thead>
+        <!-- Cabeçalho dinâmico gerado pelo JavaScript será inserido aqui -->
+        </thead>
+        <tbody id="ranking-body">
+        <!-- Conteúdo dinâmico gerado pelo JavaScript será inserido aqui -->
+        </tbody>
+    </table>
+</main>
+<footer>
+    <p>© 2024 QuizEducativo. Todos os direitos reservados.</p>
+</footer>
+
+<script src="ranking.js"></script>
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+</body>
+</html>

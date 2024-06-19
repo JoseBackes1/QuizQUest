@@ -1,0 +1,344 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F2FCFC;
+    color: #000000;
+}
+
+/*
+header, footer {
+    background-color: #CCE8EB;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    background-color: #CCE8EB;
+    height: 100px;
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}*/
+
+header {
+    background-color: #CCE8EB;
+    height: 100px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+footer {
+    background-color: #CCE8EB; 
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    /*justify-content: center;*/
+}
+
+.header-content img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    margin-left: 720px;
+    white-space: nowrap;
+    color: #007c89;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"], select {
+    width: 95%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.question-block {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #e2f7f7;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+}
+
+button#cancel {
+    background-color: #dc3545;
+}
+
+button:focus, input:focus, select:focus {
+    outline: 2px solid #005f5f;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px; /* Ajuste a margem conforme necessário */
+}
+
+.button-container button {
+    margin: 0 10px; /* Ajuste a margem entre os botões conforme necessário */
+}
+
+
+body.high-contrast {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.high-contrast header, body.high-contrast footer {
+    background-color: #333333;
+}
+
+body.high-contrast .question-block label {
+    color: #000000; /* Ou a cor que você preferir para o alto contraste */
+}
+
+
+body.high-contrast button {
+    background-color: #ffdd57;
+    color: #000000;
+}
+
+body.high-contrast input, body.high-contrast select {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #ffdd57;
+}
+
+#cancel-confirmation {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#cancel-confirmation button {
+    margin-right: 10px;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+button#confirm-yes {
+    background-color: #28a745;
+}
+
+button#confirm-no {
+    background-color: #ffc107;
+}
+
+body.high-contrast .modal-content {
+    background-color: #333;
+    color: #fff;
+}
+
+body.high-contrast .modal-content button {
+    background-color: #ffdd57;
+    color: #000;
+}
+
+
+/* CSS existente acima permanece inalterado */
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Adiciona esta linha */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 20px; 
+}
+
+#toggle-contrast {
+    display: inline-block;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #ffffff;
+    margin-left: auto; /* Movendo o botão para a direita */
+    width: 150px; /* Ajuste o tamanho conforme necessário */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px; /* Ajuste o padding conforme necessário */
+    text-align: center;
+    margin-left: 650px;
+}
+
+
+/*
+#toggle-contrast {
+    right: 20px; 
+    transform: translateY(-50%); 
+    width: 100px; 
+    height: 40px;
+    font-size: 15px;white-space: nowrap;
+    white-space: nowrap;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; /* Centraliza horizontalmente 
+    margin-left: 1400px;
+
+   gap: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-right: 20px;
+}*/
+/*
+#toggle-contrast {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    margin-left: 1400px;
+}*/
+
+/* Estilização do botão de voltar */
+.back-button {
+    display: inline-block;
+    margin: 10px 0 20px 10px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #CCE8EB;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-button i {
+    margin-right: 8px;
+}
+
+.back-button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/*ZOOM*/
+#zoom-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#zoom-in, #zoom-out {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+#zoom-in i, #zoom-out i {
+    font-size: 16px;
+}
+
+#zoom-in:hover, #zoom-out:hover {
+    background-color: #0056b3;
+}

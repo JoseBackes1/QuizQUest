@@ -1,0 +1,93 @@
+1. Criação do Banco de Dados e Tabelas
+Script SQL de Criação:
+
+-- Criação do banco de dados
+CREATE DATABASE quizDB;
+
+-- Usar o banco de dados criado
+\c quizDB;
+
+-- Tabela Usuario
+CREATE TABLE Usuario (
+    codUsuario SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    senha VARCHAR(50) NOT NULL
+);
+
+-- Tabela Quiz
+CREATE TABLE Quiz (
+    codigoQuiz SERIAL PRIMARY KEY,
+    codUsuario INTEGER REFERENCES Usuario(codUsuario),
+    nomeQuiz VARCHAR(200) NOT NULL
+);
+
+-- Tabela Pergunta
+CREATE TABLE Pergunta (
+    codigoPergunta SERIAL PRIMARY KEY,
+    codigoQuiz INTEGER REFERENCES Quiz(codigoQuiz),
+    textoPergunta TEXT NOT NULL
+);
+
+-- Tabela Resposta
+CREATE TABLE Resposta (
+    codigoResposta SERIAL PRIMARY KEY,
+    codigoPergunta INTEGER REFERENCES Pergunta(codigoPergunta),
+    textoResposta TEXT NOT NULL,
+    flagRespostaCorreta BOOLEAN NOT NULL
+);
+
+-- Tabela Ranking
+CREATE TABLE Ranking (
+    codRespondedor SERIAL PRIMARY KEY,
+    codigoQuiz INTEGER REFERENCES Quiz(codigoQuiz),
+    nomeCompleto VARCHAR(200) NOT NULL,
+    pontuacao INTEGER NOT NULL,
+    perguntasErradas TEXT
+);
+2. População das Tabelas com Dados Fictícios
+Script SQL de População:
+-- Inserir dados na tabela Usuario
+INSERT INTO Usuario (nome, email, senha) VALUES
+    ('João Silva', 'joao@email.com', 'senha123'),
+    ('Maria Souza', 'maria@email.com', 'senha456'),
+    ('Pedro Oliveira', 'pedro@email.com', 'senha789');
+
+-- Inserir dados na tabela Quiz
+INSERT INTO Quiz (codUsuario, nomeQuiz) VALUES
+    (1, 'Quiz de Matemática'),
+    (2, 'Quiz de Geografia'),
+    (3, 'Quiz de História');
+
+-- Inserir dados na tabela Pergunta
+INSERT INTO Pergunta (codigoQuiz, textoPergunta) VALUES
+    (1, 'Qual é a fórmula da área do triângulo?'),
+    (1, 'Quanto é 2 + 2?'),
+    (2, 'Qual é a capital do Brasil?'),
+    (2, 'Qual é o maior rio do mundo?'),
+    (3, 'Quem foi o primeiro presidente do Brasil?'),
+    (3, 'Em que ano o Brasil foi descoberto?');
+
+-- Inserir dados na tabela Resposta
+INSERT INTO Resposta (codigoPergunta, textoResposta, flagRespostaCorreta) VALUES
+    (1, 'Base x altura dividido por 2', true),
+    (2, '4', true),
+    (3, 'Brasília', true),
+    (4, 'Rio Amazonas', true),
+    (5, 'Deodoro da Fonseca', true),
+    (6, '1500', true),
+    (1, 'Base vezes altura', false),
+    (2, '5', false),
+    (3, 'São Paulo', false),
+    (4, 'Rio Nilo', false),
+    (5, 'Getúlio Vargas', false),
+    (6, '1492', false);
+
+-- Inserir dados na tabela Ranking
+INSERT INTO Ranking (codigoQuiz, nomeCompleto, pontuacao, perguntasErradas) VALUES
+    (1, 'Fernanda Oliveira', 10, '2;4'),
+    (1, 'Lucas Santos', 8, '2'),
+    (2, 'Ana Rodrigues', 9, '3'),
+    (2, 'Carlos Lima', 7, '4'),
+    (3, 'Juliana Pereira', 8, '5;6'),
+    (3, 'Mariana Costa', 10, '6');

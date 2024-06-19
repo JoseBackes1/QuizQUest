@@ -1,0 +1,233 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F2FCFC;
+    color: #000000;
+}
+
+header {
+    background-color: #CCE8EB;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    text-wrap: nowrap;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #CCE8EB;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+#toggle-contrast {
+    display: inline-block;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #ffffff;
+    margin-left: auto; /* Movendo o botão para a direita */
+    width: 150px; /* Ajuste o tamanho conforme necessário */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px; /* Ajuste o padding conforme necessário */
+    text-align: center;
+    margin-left: 650px;
+}
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+#logout-button {
+    cursor: pointer;
+    color: #dc3545;
+}
+
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    ;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-left: 700px;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.dashboard-item {
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    /*position: relative;*/
+}
+
+/* Estilos normais */
+/*.modal-content p {
+    color: #000000;
+}*/
+
+/* Estilos para o modo de alto contraste */
+/*body.high-contrast .modal-content p {
+    color: black;
+}*/
+
+body.high-contrast .modal-content {
+    background-color: #333;
+    color: #fff;
+}
+
+body.high-contrast .modal-content button {
+    background-color: #ffdd57;
+    color: #000;
+}
+
+body.high-contrast {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.high-contrast header, body.high-contrast footer {
+    background-color: #333333;
+}
+
+body.high-contrast button {
+    background-color: #ffdd57;
+    color: #000000;
+}
+
+body.high-contrast .dashboard-item a button {
+    background-color: #ffdd57;
+    color: #000000;
+}
+
+.content-box {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 0 auto 20px; /* Margem automática nas laterais e embaixo */
+    width: 600px;
+    display: flex; /* Adiciona flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-direction: column; /* Empilha os elementos verticalmente */
+}
+
+
+/*ZOOM*/
+#zoom-controls {
+    display: flex;
+    align-items: center;
+    top: 20px;
+    right: 20px;
+    margin-left: 1620px;
+    width: 250px;
+    text-wrap: nowrap;
+}
+
+#zoom-in, #zoom-out {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#zoom-in i, #zoom-out i {
+    font-size: 16px;
+}
+
+#zoom-in:hover, #zoom-out:hover {
+    background-color: #0056b3;
+}

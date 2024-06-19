@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Professor - Quiz Educativo</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header id="site-header">
+        <div class="header-content">
+            <img id="site-logo" src="Quiz_educativo.png" alt="Logo do site Quiz Educativo constituída por uma nuvem com redes de internet simulando a chuva">
+            <h1>Quiz Educativo</h1>
+            <button id="toggle-contrast">Alto Contraste</button>
+        </div>      
+    </header>
+    <div id="zoom-controls">
+        <button id="zoom-in"><i class="fas fa-search-plus"></i> Aumentar Zoom</button>
+        <button id="zoom-out"><i class="fas fa-search-minus"></i> Diminuir Zoom</button>
+    </div> 
+    <main>
+        <div class="content-box">
+            <h2 id="welcome-message">Bem-vindo, Professor!</h2>
+            <div class="dashboard-container">
+                <div class="dashboard-item">
+                    <a href="criaquiz.html">
+                        <button>Criar Quiz</button>
+                    </a>
+                </div>
+                <div class="dashboard-item">
+                    <a href="historico.html">
+                        <button>Histórico de Quizzes</button>
+                    </a>
+                </div>
+                <div class="dashboard-item">
+                    <a href="ranking.html">
+                        <button>Ranking dos Alunos</button>
+                    </a>
+                </div>
+                <div class="dashboard-item">
+                    <!--<a href="index.html">-->
+                    <button id="logout-button">Sair</button>
+
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 QuizEducativo. Todos os direitos reservados.</p>
+    </footer>
+  
+    <!-- Tela de confirmação de logoff -->
+    <div id="confirm-logout-modal" class="modal">
+        <div class="modal-content">
+            <p>Você tem certeza que deseja sair?</p>
+            <button id="confirm-no">Não</button>
+            <button id="confirm-yes">Sim</button>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const welcomeMessage = document.getElementById('welcome-message');
+        const userName = localStorage.getItem('userName') || 'Professor';
+        const confirmLogoutModal = document.getElementById('confirm-logout-modal');
+        const confirmYesButton = document.getElementById('confirm-yes');
+        const confirmNoButton = document.getElementById('confirm-no');
+        const toggleContrastButton = document.getElementById('toggle-contrast');
+
+        // Personalizar mensagem de boas-vindas
+        if (welcomeMessage) {
+            welcomeMessage.textContent = `Bem-vindo, ${userName}!`;
+        }
+
+        // Função para alternar o modo de contraste
+        function toggleContrast() {
+            document.body.classList.toggle('high-contrast');
+            const isHighContrast = document.body.classList.contains('high-contrast');
+            localStorage.setItem('highContrast', isHighContrast ? 'true' : 'false');
+        }
+
+        // Evento para o botão de alto contraste
+        if (toggleContrastButton) {
+            toggleContrastButton.addEventListener('click', toggleContrast);
+        }
+
+        // Manter a preferência do usuário ao recarregar a página
+        if (localStorage.getItem('highContrast') === 'true') {
+            document.body.classList.add('high-contrast');
+        }
+
+        const logoutButton = document.getElementById('logout-button');
+        if (logoutButton) {
+            logoutButton.addEventListener('click', function () {
+                // Exibe o modal de confirmação
+                confirmLogoutModal.style.display = 'block';
+            });
+        }
+
+        if (confirmYesButton) {
+            confirmYesButton.addEventListener('click', function () {
+                // Se o usuário clicar em "Sim"
+                localStorage.removeItem('userLoggedIn');  // Remove o status de login do usuário
+                localStorage.removeItem('userName');     // Remove o nome do usuário do localStorage
+                window.location.href = 'index.html';  // Redireciona para a página inicial
+            });
+        }
+
+        if (confirmNoButton) {
+            confirmNoButton.addEventListener('click', function () {
+                // Se o usuário clicar em "Não", esconde o modal de confirmação
+                confirmLogoutModal.style.display = 'none';
+            });
+        }
+
+        // Opcional: Esconder o modal se o usuário clicar fora da caixa de diálogo
+        window.addEventListener('click', function(event) {
+            if (event.target === confirmLogoutModal) {
+                confirmLogoutModal.style.display = 'none';
+            }
+        });
+
+        /*ZOOM*/
+        const zoomInButton = document.getElementById('zoom-in');
+        const zoomOutButton = document.getElementById('zoom-out');
+
+        if (zoomInButton) {
+            zoomInButton.addEventListener('click', () => {
+                adjustFontSize(1.1); // Aumentar em 10%
+            });
+        }
+
+        if (zoomOutButton) {
+            zoomOutButton.addEventListener('click', () => {
+                adjustFontSize(0.9); // Diminuir em 10%
+            });
+        }
+
+        function adjustFontSize(factor) {
+            document.body.style.fontSize = (parseFloat(getComputedStyle(document.body).fontSize) * factor) + 'px';
+        }
+    });
+</script>
+
+</body>
+</html>

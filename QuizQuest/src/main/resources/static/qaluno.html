@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responder Quiz - Quiz Educativo</title>
+    <link rel="stylesheet" href="qaluno.css">
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <img id="site-logo" src="Quiz_Educativo.png" alt="Logo do site Quiz Educativo constituída por uma nuvem com redes de internet simulando a chuva">
+        <h1>Quiz Educativo</h1>
+        <button id="toggle-contrast">Alto Contraste</button>
+    </div>
+    <nav>
+        <a href="index.html">Início</a>
+    </nav>
+</header>
+<main>
+    <h2>Responder Quiz</h2>
+    <form id="quiz-form">
+        <fieldset>
+            <legend>Informações do Aluno</legend>
+            <label for="student-name">Nome do Aluno</label>
+            <input type="text" id="student-name" name="student-name" required>
+        </fieldset>
+
+        <fieldset id="questions">
+            <legend>Perguntas</legend>
+            <!-- As perguntas serão carregadas dinamicamente pelo JavaScript -->
+        </fieldset>
+
+        <button type="button" id="cancel-quiz">Cancelar</button>
+        <button type="submit" id="submit-quiz">Concluir Quiz</button>
+    </form>
+</main>
+<footer>
+    <p>© 2024 QuizEducativo. Todos os direitos reservados.</p>
+</footer>
+
+<!-- Tela de Confirmação -->
+<div id="confirmation-dialog" class="modal">
+    <div class="modal-content">
+        <p>Você tem certeza que deseja sair do quiz?</p>
+        <button id="confirm-yes">Sim</button>
+        <button id="confirm-no">Não</button>
+    </div>
+</div>
+
+<!-- Tela de Resultado -->
+<div id="result-dialog" class="modal">
+    <div class="modal-content">
+        <p id="result-message"></p>
+        <button id="close-result">Fechar</button>
+    </div>
+</div>
+
+<script src="qaluno.js"></script>
+
+<!--VLibras-->
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
+</html>
