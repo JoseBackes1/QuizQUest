@@ -3,26 +3,32 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #F2FCFC;
     color: #000000;
 }
 
 header, footer {
     background-color: #CCE8EB;
     padding: 20px;
-    text-align: center;
 }
 
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between; /* Ajusta os elementos para os cantos */
 }
 
 .header-content img {
     width: 50px;
     height: 50px;
-    margin-right: 20px;
+}
+
+#high-contrast-button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
 }
 
 main {
@@ -33,6 +39,17 @@ h1, h2 {
     margin: 0;
     padding: 0;
     text-align: center;
+}
+
+h1 {
+    color: #007c89;
+}
+
+/* Estilos específicos para o campo de nome do estudante */
+#student-name {
+    width: 100%;
+    max-width: 540px; /* Define um tamanho máximo */
+
 }
 
 form {
@@ -141,4 +158,11 @@ body.high-contrast button#confirm-yes {
 body.high-contrast button#confirm-no {
     background-color: #ffc107;
     color: #000000;
+}
+
+/* Centraliza o conteúdo do rodapé */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
